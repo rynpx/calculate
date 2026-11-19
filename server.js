@@ -5,7 +5,7 @@ const app = express();
 app.use(express.static('public'));
 app.use(express.json()); 
 
-const fluelPrice = 40; 
+const fluelPrice = 50; 
 
 app.get('/vehicles', (req, res) => {
     res.json(vehicles);
