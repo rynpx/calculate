@@ -6,9 +6,7 @@ const app = express();
 app.use(express.static('public'));
 app.use(express.json()); 
 
-const salesport = Number(process.env.SALES_PORT);
-const accport = Number(process.env.ACC_PORT);
-const itport = Number(process.env.IT_PORT);
+const port = Number(process.env.PORT)
 
 const fluelPrice = 40; 
 
@@ -46,10 +44,6 @@ if (typeof distanceKm !== 'string' || distanceKm === " ") {
     });
 });
 
-const port = [salesport, accport, itport]
-
-port.forEach((port) => {
     app.listen(port,"0.0.0.0", () => {
         console.log(`Server is running on port ${port}`);
     });
-});
